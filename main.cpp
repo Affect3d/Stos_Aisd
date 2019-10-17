@@ -46,6 +46,52 @@ bool isEmpty(ele* stos)
     else return false;
 }
 
+void SortujStos(elem*& stos) {
+    elem* temp = NULL;
+    int n=0;
+    while(stos!=NULL) {
+        push(temp, pop(stos));
+        n++;
+    }
+    stos=temp;
+    temp=NULL;
+    while(n>1) {
+        int m =1;
+        int min = pop(stos);
+        while(m<n) {
+            if(topEl(stos)<min) {
+                push(temp, min);
+                min=pop(stos);
+            } else {
+                push(temp, pop(stos));
+            }
+            m++;
+        }
+        push(stos, min);
+        while(temp!=NULL) {
+            push(stos, pop(temp));
+        }
+        n--;
+    }
+}
+
+void PrzeniesStos(elem*& stos1, elem*& stos2)
+{
+    elem* temp=NULL;
+    while(stos!=NULL) {
+        push(temp, pop(stos1));
+    }
+    while(temp!= NULL) {
+        push(stos2, pop(temp));
+    }
+}
+
+void Przenies(elem*& stos1, elem*& stos2)
+{
+    elem* licznik = stos1;
+    int n=0;
+}
+
 int main()
 {
     elem *newnode = new elem;
