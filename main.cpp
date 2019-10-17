@@ -7,37 +7,43 @@ int dane;
 elem * nast;
 };
 
-struct elem* glowa = NULL;
-
 void push(elem* &stos, int x)
 {
-    //elem *nowy = new elem;
-    stos->dane = x;
-    stos->nast=glowa;
-    glowa=stos;
+    elem *temp = new elem;
+    temp->dane = x;
+    temp->nast=stos;
+    stos=tmp;
 }
 
 int pop(elem* &stos)
 {
-    elem *nowy = stos;
-    stos = stos->nast;
-    delete nowy;
-    return stos->dane;
+    if(stos!=NULL) {
+        elem* temp = stos;
+        stos = stos->nast;
+        int dana = temp->dane;
+        delete temp;
+        return dana;
+    } else {
+        cout<<"Stos pusty"<<endl;
+        return 0;
+    }
 }
 
 int topEl(elem* stos)
 {
-    struct elem *ptr;
-    if(glowa == NULL){
-        cout<<"stack is empty";
+    if(stos != NULL){
+        return stos->dane;
     } else {
-        while (ptr != NULL) {
-            if(ptr->dane == stos->dane)
-                return ptr->dane;
-            ptr = ptr->nast;
-        }
+       cout<<"Stos pusty"<<endl;
+        return 0;
     }
-    return 0;
+}
+
+bool isEmpty(ele* stos)
+{
+    if(stos == NULL)
+        return true;
+    else return false;
 }
 
 int main()
