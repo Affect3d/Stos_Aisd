@@ -39,11 +39,110 @@ int topEl(elem* stos)
     }
 }
 
-bool isEmpty(ele* stos)
-{
-    if(stos == NULL)
-        return true;
-    else return false;
+void insert(int x, int i, elem* &lista) {
+    elem *temp = lista;
+    if(i==1) {
+        push(lista, x);
+    } else if (temp->nast == 0) {
+        elem *nowy = new elem;
+        nowy->dane= x;
+        temp->nast=nowy;
+    }
+    for (int j=2; j<i;j++) {
+        if(j==i-1) {
+                elem *nowy = new elem;
+                nowy->dane= x;
+                nowy->nast = temp->nast;
+                temp->nast = nowy;
+        }
+        else temp = temp->nast;
+    }
+    lista = temp;
+}
+
+oid insert(int x, int i, elem* &lista) {
+    elem *temp = lista;
+    if(i==1) {
+        push(lista, x);
+    } else if (temp->nast == 0) {
+        elem *nowy = new elem;
+        nowy->dane= x;
+        temp->nast=nowy;
+    }
+    for (int j=2; j<i;j++) {
+        if(j==i-1) {
+                elem *nowy = new elem;
+                nowy->dane= x;
+                nowy->nast = temp->nast;
+                temp->nast = nowy;
+        }
+        else temp = temp->nast;
+    }
+    lista = temp;
+}
+
+oid insert(int x, int i, elem* &lista) {
+    elem *temp = lista;
+    if(i==1) {
+        push(lista, x);
+    } else if (temp->nast == 0) {
+        elem *nowy = new elem;
+        nowy->dane= x;
+        temp->nast=nowy;
+    }
+    for (int j=2; j<i;j++) {
+        if(j==i-1) {
+                elem *nowy = new elem;
+                nowy->dane= x;
+                nowy->nast = temp->nast;
+                temp->nast = nowy;
+        }
+        else temp = temp->nast;
+    }
+    lista = temp;
+}
+
+oid insert(int x, int i, elem* &lista) {
+    elem *temp = lista;
+    if(i==1) {
+        push(lista, x);
+    } else if (temp->nast == 0) {
+        elem *nowy = new elem;
+        nowy->dane= x;
+        temp->nast=nowy;
+    }
+    for (int j=2; j<i;j++) {
+        if(j==i-1) {
+                elem *nowy = new elem;
+                nowy->dane= x;
+                nowy->nast = temp->nast;
+                temp->nast = nowy;
+        }
+        else temp = temp->nast;
+    }
+    lista = temp;
+}
+
+void print(elem* lista) {
+    elem* temp = lista;
+    while (temp != NULL) {
+        if (temp!=lista) {
+            cout<<" <- ";
+        }
+        cout<<temp->dane;
+        temp=temp->nast;
+    }
+    cout<<endl;
+}
+
+int size(elem* lista) {
+    int sum=0;
+    while (lista != NULL) {
+        if(lista->nast !=NULL)
+            lista = lista->nast;
+        sum++;
+    }
+    return sum;
 }
 
 void SortujStos(elem*& stos) {
@@ -86,18 +185,4 @@ void PrzeniesStos(elem*& stos1, elem*& stos2)
     }
 }
 
-void Przenies(elem*& stos1, elem*& stos2)
-{
-    elem* licznik = stos1;
-    int n=0;
-}
 
-int main()
-{
-    elem *newnode = new elem;
-    elem *new2 = new elem;
-    push(newnode, 4);
-    push(new2, 8);
-    cout<< topEl(glowa);
-    return 0;
-}
