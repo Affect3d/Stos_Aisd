@@ -60,69 +60,6 @@ void insert(int x, int i, elem* &lista) {
     lista = temp;
 }
 
-oid insert(int x, int i, elem* &lista) {
-    elem *temp = lista;
-    if(i==1) {
-        push(lista, x);
-    } else if (temp->nast == 0) {
-        elem *nowy = new elem;
-        nowy->dane= x;
-        temp->nast=nowy;
-    }
-    for (int j=2; j<i;j++) {
-        if(j==i-1) {
-                elem *nowy = new elem;
-                nowy->dane= x;
-                nowy->nast = temp->nast;
-                temp->nast = nowy;
-        }
-        else temp = temp->nast;
-    }
-    lista = temp;
-}
-
-oid insert(int x, int i, elem* &lista) {
-    elem *temp = lista;
-    if(i==1) {
-        push(lista, x);
-    } else if (temp->nast == 0) {
-        elem *nowy = new elem;
-        nowy->dane= x;
-        temp->nast=nowy;
-    }
-    for (int j=2; j<i;j++) {
-        if(j==i-1) {
-                elem *nowy = new elem;
-                nowy->dane= x;
-                nowy->nast = temp->nast;
-                temp->nast = nowy;
-        }
-        else temp = temp->nast;
-    }
-    lista = temp;
-}
-
-oid insert(int x, int i, elem* &lista) {
-    elem *temp = lista;
-    if(i==1) {
-        push(lista, x);
-    } else if (temp->nast == 0) {
-        elem *nowy = new elem;
-        nowy->dane= x;
-        temp->nast=nowy;
-    }
-    for (int j=2; j<i;j++) {
-        if(j==i-1) {
-                elem *nowy = new elem;
-                nowy->dane= x;
-                nowy->nast = temp->nast;
-                temp->nast = nowy;
-        }
-        else temp = temp->nast;
-    }
-    lista = temp;
-}
-
 void print(elem* lista) {
     elem* temp = lista;
     while (temp != NULL) {
@@ -143,6 +80,23 @@ int size(elem* lista) {
         sum++;
     }
     return sum;
+}
+
+void remove(int i, elem* &lista) {
+    if(i==1) {
+        elem *temp = lista;
+        lista = temp->nast;
+    } else {
+        elem *temp = lista;
+        int j=1;
+        while (temp) {
+            if(j+1==i) break;
+            temp=temp->nast;
+            j++;
+        }
+        if(temp->nast->nast==0) temp->nast=0;
+        else temp->nast=temp->nast-nast;
+    }
 }
 
 void SortujStos(elem*& stos) {
