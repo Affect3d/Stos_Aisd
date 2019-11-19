@@ -39,6 +39,27 @@ int topEl(elem* stos)
     }
 }
 
+bool isEmpty(elem* stos) {
+    // ...
+    return false; // usuń tą część
+}
+
+void reverseElementsWithAdditionalStack(elem* &stos) {
+    // ...
+}
+
+void sortElementsWithAdditionalStack(elem* &stos) {
+    // ...
+}
+
+void moveElementsWithAdditionalStack(elem* stos1, elem* &stos2) {
+    // ...
+}
+
+void moveElementsWithAdditionalVariables(elem* stos1, elem* &stos2) {
+    // ...
+}
+
 void insert(int x, int i, elem* &lista) {
     elem *temp = lista;
     if(i==1) {
@@ -149,6 +170,26 @@ int main() {
     // insert(4, 4, lista);
     // remove(1, lista);
     // cout << read(1, lista) << endl; // powinno być 2
+    
+    cout << "Pobranie wierzchołka i zdjęcie elementu" << endl;
+// cout << pop(stos1) << endl; // powinno być 4
+// cout << topEl(stos1) << endl; // powinno być 3
+
+cout << "Odwracanie elementów na stosie" << endl;
+// reverseElementsWithAdditionalStack(stos1);
+// cout << topEl(stos1) << endl; // powinno być 1
+
+cout << "Sortowanie elementów na stosie" << endl;
+// sortElementsWithAdditionalStack(stos1);
+// cout << topEl(stos1) << endl; // powinno być 3
+
+cout << "Przenoszenie elementów między stosami" << endl;
+elem* stos2 = NULL;
+elem* stos3 = NULL;
+// moveElementsWithAdditionalStack(stos1, stos2);
+// moveElementsWithAdditionalVariables(stos1, stos3);
+// cout << topEl(stos2) << endl; // powinno być 3
+// cout << topEl(stos3) << endl; // powinno być 3
 
     cout << "Pobieranie rozmiaru listy" << endl;
     // cout << size(lista) << endl; // powinno być 3
