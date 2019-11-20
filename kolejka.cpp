@@ -95,45 +95,45 @@ void reverseStackElementsWithAdditionalQueue(elem* &stos) {
 int main() 
 {
     elem* pocz_kolejki = NULL;
-elem* kon_kolejki = NULL;
+    elem* kon_kolejki = NULL;
 
-cout << "Dodawanie elementów do kolejki oraz pobranie głowy kolejki" << endl; 
-// add(pocz_kolejki, kon_kolejki, 1);
-// add(pocz_kolejki, kon_kolejki, 2);
-// add(pocz_kolejki, kon_kolejki, 3);
-// add(pocz_kolejki, kon_kolejki, 4);
-// cout << firstEl(pocz_kolejki) << endl; // powinno być 1
+    cout << "Dodawanie elementów do kolejki oraz pobranie głowy kolejki" << endl; 
+    // add(pocz_kolejki, kon_kolejki, 1);
+    // add(pocz_kolejki, kon_kolejki, 2);
+    // add(pocz_kolejki, kon_kolejki, 3);
+    // add(pocz_kolejki, kon_kolejki, 4);
+    // cout << firstEl(pocz_kolejki) << endl; // powinno być 1
 
-cout << "Pobranie głowy kolejki i zdjęcie elementu" << endl;
-// cout << next(pocz_kolejki, kon_kolejki) << endl; // powinno być 1
-// cout << firstEl(stos1) << endl; // powinno być 2
+    cout << "Kolejka na stosach" << endl;
+    elem* stos1 = NULL;
+    elem* stos2 = NULL;
+    // twoStacksAdd(stos1, stos2, 1);
+    // twoStacksAdd(stos1, stos2, 2);
+    // cout << firstEl(stos1) << endl; // powinno być 1
+    // cout << twoStackNext(stos1, stos2); // powinno być 1
+    // cout << firstEl(stos1) << endl; // powinno być 2
+    
+    cout << "Pobranie głowy kolejki i zdjęcie elementu" << endl;
+    // cout << next(pocz_kolejki, kon_kolejki) << endl; // powinno być 1
+    // cout << firstEl(stos1) << endl; // powinno być 2
 
-cout << "Kolejka na stosach" << endl;
-elem* stos1 = NULL;
-elem* stos2 = NULL;
-// twoStacksAdd(stos1, stos2, 1);
-// twoStacksAdd(stos1, stos2, 2);
-// cout << firstEl(stos1) << endl; // powinno być 1
-// cout << twoStackNext(stos1, stos2); // powinno być 1
-// cout << firstEl(stos1) << endl; // powinno być 2
+    cout << "Kolejka na tablicy" << endl;
+    elem* kolejka[9];
+    // arrayAdd(kolejka, 1);
+    // arrayAdd(kolejka, 2);
+    // cout << arrayfirstEl(kolejka) << endl; // powinno być 1
+    // cout << arrayNext(kolejka) << endl; // powinno być 1
+    // cout << arrayfirstEl(kolejka) << endl; // powinno być 2
 
-cout << "Kolejka na tablicy" << endl;
-elem* kolejka[9];
-// arrayAdd(kolejka, 1);
-// arrayAdd(kolejka, 2);
-// cout << arrayfirstEl(kolejka) << endl; // powinno być 1
-// cout << arrayNext(kolejka) << endl; // powinno być 1
-// cout << arrayfirstEl(kolejka) << endl; // powinno być 2
-
-cout << "Odwracanie elementów na stosie" << endl;
-elem* stos = NULL;
-// push(stos, 1);
-// push(stos, 2);
-// push(stos, 3);
-// cout << topEl(stos) << endl; // powinno być 3
-// reverseStackElementsWithAdditionalQueue(stos);
-// cout << topEl(stos) << endl; // powinno być 1
-    return 0;   
+    cout << "Odwracanie elementów na stosie" << endl;
+    elem* stos = NULL;
+    // push(stos, 1);
+    // push(stos, 2);
+    // push(stos, 3);
+    // cout << topEl(stos) << endl; // powinno być 3
+    // reverseStackElementsWithAdditionalQueue(stos);
+    // cout << topEl(stos) << endl; // powinno być 1
+        return 0;   
 }
 
 void print(elem* pocz_kolejki) {
