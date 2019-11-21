@@ -85,51 +85,58 @@ int twoStackNext(elem* &stos1, elem* &stos2) {
         }
         if(stos1!=NULL) return pop(stos1);
         else cout<<"Pusta kolejka"<<endl;
-        }
-        return 0; // usuń tą część
     }
+    return 0; // usuń tą część
+}
+
+const int N=9;
+int rozm=0;
+int kon=0;
+int pocz=0;
 
 void arrayAdd(elem* arr[], int x) {
     //jak policzyc ile elementów
-    int rozm =0;
-    int kon=0;
-    int pocz=0;
-    if(rozm==arr.size()) cout<<"Kolejka pelna";
+    if(rozm==N) cout<<"pełny"<<endl;
     else {
-        array[kon]=x;
+        arr[kon]=x;
         rozm++;
         kon++;
-        if(kon==arr.size()) kon=0;
+        if(kon==N) kon=0;
     }
 }
 
 int arrayNext(elem* arr[]) {
-    int rozm =0;
-    int kon=0;
-    int pocz=0;
-    if(arr.size()==0) cout<<"Pusty"<<endl;
+    if(rozm()==0) cout<<"Pusty"<<endl;
     else {
         int wynik = arr[pocz];
         rozm--;
         pocz++;
-        if(pocz==arr.size()) pocz=0;
+        if(pocz==N) pocz=0;
         return wynik;
     }
     return 0; // usuń tą część
 }
 
 int arrayfirstEl(elem* arr[]) {
-    // ...
+    return arr[0]->dane;
     return 0; // usuń tą część
 }
 
 bool arrayIsEmpty(elem* arr[]) {
-    // ...
+    if(arr==NULL) return true;
     return false; // usuń tą część
 }
 
 void reverseStackElementsWithAdditionalQueue(elem* &stos) {
-    // ...
+    //pocz i kon jest potrzebny
+    elem* pocz=firstEl(stos);
+    elem* kon=NULL;
+    while (stos!=NULL) {
+        add(pocz, kon, pop(stos));
+    }
+    while(kon!=NULL) {
+        push(stos, next(pocz, kon));
+    }
 }
 
 int main()
