@@ -1,0 +1,47 @@
+string dec2hex(int n) {
+    if (n == 0)  {
+        return "";
+    }
+    
+    dec2hex(n / 16);
+    int x = n % 16;
+    string answer="";
+
+    switch (x)
+    {
+        case 10:
+            answer="A";
+            break;
+        case 11:
+            answer= "B";
+            break;
+        case 12:
+            answer= "C";
+            break;
+        case 13:
+            answer= "D";
+            break;
+        case 14:
+            answer= "E";
+            break;
+        case 15:
+            answer= "F";
+            break;
+        default:
+            answer= to_string(x);
+            break;
+    }
+    return answer;
+}
+
+int nwd(int a, int b) {
+    if(a!=b)
+     return nwd(a>b?a-b:a,b>a?b-a:b);
+   return a;
+}
+
+int sequence(int n) {
+    if(n==1) return 2;
+    if(n%2==0) return 2+sequence(n-1);
+    if(n%2!=0) return 2*sequence(n-1);
+}
