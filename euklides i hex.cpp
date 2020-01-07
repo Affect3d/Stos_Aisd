@@ -38,10 +38,30 @@ string convertHex(int num, string ss)
 
 }
 
+bool recursiveisPrime(int n, int d)
+{
+    if(n<2)
+        return 0;
+    if(d == 1)
+        return true;
+    else
+    {
+        if(n!=d && n % d == 0)
+            return false;
+        else
+            return recursiveisPrime(n, d - 1);
+    }
+}
+
+bool is_prime(int n) {
+    return recursiveisPrime(n, n);
+}
+
 int main()
 {
     //cout<< gcd(256, 280) << endl;
     string buffer="";
     cout << convertHex(177777, buffer)<<endl;
+    cout << is_prime(3)<<endl;
     return 0;
 }
